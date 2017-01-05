@@ -1,0 +1,12 @@
+
+  *{margin:0;padding:0;font-size:15px;font-family:calibri,arial,sans-serif}
+  footer,section,header{display:block;}
+  body{padding:2em;background:#fff;color:#fff;}
+  h1{font-size:24px;margin:10px 0;}
+  h2{font-size:18px;margin:10px 0;color:#a000e1;}
+  video,canvas{display:block;border:2px solid #000;}
+  #video,#canvas{float:left;padding-right:10px;}
+  #video{width:640px;}
+  #save li{list-style:none;margin:0;padding:0}
+  #save{clear:both;padding:10px 0;overflow:auto;}
+  #save img{float:left;padding-right:5px;padding-bottom:5px;}
