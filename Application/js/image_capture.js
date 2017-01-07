@@ -20,24 +20,35 @@ function capture(){
     ctx.fillRect(0, 0, w, h);
     ctx.drawImage(v, 0, 0, w, h);
 }
-
-
-
 (function(){
-	
-  var v = document.querySelector('video'),
-      c = document.querySelector('canvas'),
-      ctx = c.getContext('2d');
-  v.addEventListener('loadedmetadata',function(ev){
-    
+	$('#cropbox1').Jcrop({
+		bgColor:     'black',
+        bgOpacity:   .4,   
+				
+	});
+})();
+function showCoords(c)
+{
+	$('#x').val(c.x);
+	$('#y').val(c.y);
+	$('#x2').val(c.x2);
+	$('#y2').val(c.y2);
+	$('#w').val(c.w);
+	$('#h').val(c.h);
+};
+(function(){
+	var v = document.querySelector('video'),
+    c = document.querySelector('canvas'),
+    ctx = c.getContext('2d');
+	v.addEventListener('loadedmetadata',function(ev){
     var ratio = v.videoWidth/v.videoHeight,
-        w = v.videoWidth,
-        h = v.videoHeight,
-        time = 0,
-        img = null,
-        li = null;
-		c.width = w;
-		c.height = h;
+    w = v.videoWidth,
+    h = v.videoHeight,
+    time = 0,
+    img = null,
+    li = null;
+	c.width = w;
+	c.height = h;
 	},false);
   }
 )();
