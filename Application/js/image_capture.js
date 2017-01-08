@@ -22,7 +22,7 @@ function capture(){
 	var v = document.querySelector('video'),
     c = document.querySelector('canvas'),
     ctx = c.getContext('2d');
-	v.addEventListener('loadedmetadata',function(ev){
+		v.addEventListener('loadedmetadata',function(ev){
     var ratio = v.videoWidth/v.videoHeight,
     w = v.videoWidth,
     h = v.videoHeight,

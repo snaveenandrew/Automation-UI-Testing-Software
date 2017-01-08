@@ -2,6 +2,8 @@
   $('#cropbox1').Jcrop({
 		bgColor:     'black',
     bgOpacity:   .1,
+    onChange: showCoords,
+		onSelect: showCoords
 	});
 })();
 function showCoords(c)
