@@ -3,7 +3,6 @@ function capture(){
 			var v = document.querySelector('video'),
       n = document.querySelector('source').src.replace(/.*\/|\..*$/g,''),
       c = document.querySelector('canvas'),
-      save = document.querySelector('#save ul'),
       ctx = c.getContext('2d');
 			var ratio = v.videoWidth/v.videoHeight,
       w = v.videoWidth,
@@ -23,14 +22,7 @@ function capture(){
     c = document.querySelector('canvas'),
     ctx = c.getContext('2d');
 		v.addEventListener('loadedmetadata',function(ev){
-    var ratio = v.videoWidth/v.videoHeight,
-    w = v.videoWidth,
-    h = v.videoHeight,
-    time = 0,
-    img = null,
-    li = null;
-	c.width = w;
-	c.height = h;
+    var ratio = v.videoWidth/v.videoHeight;
 	},false);
   }
 )();

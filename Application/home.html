@@ -11,41 +11,43 @@
 		<script src="js/html2canvas.js"></script>
 		<!--CSS Source-->
 	  <link rel="stylesheet" type="text/css" href="css/home.css">
-	  <link rel="stylesheet" href="templates/css/jquery.Jcrop.css" type="text/css" />
+	  <link rel="stylesheet" type="text/css" href="css/jquery.Jcrop.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 
 	</head>
 	<body>
-		<!--<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-2">
-				STB Automation Testing
-				</div>
-				<div class="col-md-2">
-				<a>OPTIONS</a>
-				</div>
-				<div class="col-md-2">
-				<a>REMOTE CONFIG</a>
-				</div>
-			</div>
-		</div>-->
+		<nav class="navbar navbar ">
+		 <div class="container-fluid">
+			 <ul>
+				<li><a class="active">STB Automation Testing</a></li>
+  		 	<li><a href="#home">Remote Config</a></li>
+  			<li><a href="#news">Options</a></li>
+  			<li><a href="#contact">FAQ</a></li>
+  			<li><a href="#about">About Us</a></li>
+			</ul>
+		 </div>
+		</nav>
 			<div class="container-fluid">
 				<div class="row">
 					<!--Left Panel-->
 					<div class="col-md-6">
 						<div id="video">
-						  <h2>Sample STB Video</h2>
-						  <video controls>
+						  <p class="content">Video Panel
+							<input type="button" data-toggle="tooltip" data-placement="left" title="Sample Video of STB" value="?"></p>
+						  <video width="600" height="337.5" controls>
 							<source src="video/db_design.mp4" type="video/mp4"></source>
 							<source src="video/db_design.webm" type="video/webm"></source>
-						  </video><br>
+						  </video>
 						  <input type="button" onclick="capture()" value="capture">
 						</div>
 					</div>
 					<!--Right Panel-->
 					<div class="col-md-6">
 							<div id="canvas">
-							  <h2>Preview</h2>
-							  <canvas id="cropbox1"></canvas><br>
+							  <p class="content">Preview
+										<input type="button" data-toggle="tooltip" data-placement="left" title="Preview of image captured" value="?">
+								</p>
+							  <canvas id="cropbox1" width="600" height="337.5"></canvas>
 								<input type="hidden" id="x">
 								<input type="hidden" id="y">
 								<input type="hidden" id="x2">
