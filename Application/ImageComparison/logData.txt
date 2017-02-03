@@ -1,0 +1,18 @@
+INFO    2017-02-03 12:49:41,930 [main] com.testing.test.TestProcessor  - IMAGE COMPARISON
+INFO    2017-02-03 12:51:09,630 [main] com.testing.test.TestProcessor  - IMAGE COMPARISON
+INFO    2017-02-03 12:51:10,388 [main] com.testing.test.TestProcessor  - Image Successully Saved in images\source\1734_125109.png
+INFO    2017-02-03 12:51:10,567 [main] com.testing.test.TestProcessor  - {"value":99,"status":true,"desc":"Image Comparison success"}
+INFO    2017-02-03 12:51:10,573 [main] com.testing.test.TestProcessor  - OCR COMPARISON
+INFO    2017-02-03 12:52:07,463 [main] com.testing.test.TestProcessor  - IMAGE COMPARISON
+INFO    2017-02-03 12:52:08,142 [main] com.testing.test.TestProcessor  - Image Successully Saved in images\source\1734_125207.png
+INFO    2017-02-03 12:52:08,302 [main] com.testing.test.TestProcessor  - {"value":100,"status":true,"desc":"Image Comparison success"}
+INFO    2017-02-03 12:52:08,305 [main] com.testing.test.TestProcessor  - OCR COMPARISON
+INFO    2017-02-03 12:55:28,346 [main] com.testing.test.TestProcessor  - IMAGE COMPARISON
+INFO    2017-02-03 12:55:29,061 [main] com.testing.test.TestProcessor  - Image Successully Saved in images\source\1734_125528.png
+INFO    2017-02-03 12:55:29,192 [main] com.testing.test.TestProcessor  - {"value":100,"status":true,"desc":"Image Comparison success"}
+INFO    2017-02-03 12:55:29,197 [main] com.testing.test.TestProcessor  - OCR COMPARISON
+INFO    2017-02-03 12:56:28,184 [main] com.testing.test.TestProcessor  - IMAGE COMPARISON
+INFO    2017-02-03 12:56:28,723 [main] com.testing.test.TestProcessor  - Image Successully Saved in images\source\1734_125628.png
+INFO    2017-02-03 12:56:28,907 [main] com.testing.test.TestProcessor  - {"value":100,"status":true,"desc":"Image Comparison success"}
+INFO    2017-02-03 12:56:28,912 [main] com.testing.test.TestProcessor  - OCR COMPARISON
+INFO    2017-02-03 12:56:35,873 [main] com.testing.test.TestProcessor  - {"value":100,"status":true,"desc":"Image contains the text"}
