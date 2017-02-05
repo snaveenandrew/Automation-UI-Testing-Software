@@ -16,3 +16,8 @@ INFO    2017-02-03 12:56:28,723 [main] com.testing.test.TestProcessor  - Image S
 INFO    2017-02-03 12:56:28,907 [main] com.testing.test.TestProcessor  - {"value":100,"status":true,"desc":"Image Comparison success"}
 INFO    2017-02-03 12:56:28,912 [main] com.testing.test.TestProcessor  - OCR COMPARISON
 INFO    2017-02-03 12:56:35,873 [main] com.testing.test.TestProcessor  - {"value":100,"status":true,"desc":"Image contains the text"}
+INFO    2017-02-04 17:22:16,478 [main] com.testing.test.TestProcessor  - IMAGE COMPARISON
+INFO    2017-02-04 17:22:18,941 [main] com.testing.test.TestProcessor  - Image Successully Saved in images\source\1735_052217.png
+INFO    2017-02-04 17:22:19,189 [main] com.testing.test.TestProcessor  - {"value":99,"status":true,"desc":"Image Comparison success"}
+INFO    2017-02-04 17:22:19,237 [main] com.testing.test.TestProcessor  - OCR COMPARISON
+INFO    2017-02-04 17:22:26,577 [main] com.testing.test.TestProcessor  - {"value":100,"status":true,"desc":"Image contains the text"}

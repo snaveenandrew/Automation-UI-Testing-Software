@@ -29,13 +29,15 @@ public class Main extends Application {
         //double panelWidth = (width)/2 - 50;
         //double panelHeight = (9*panelWidth)/16;
         
-    	File file = new File("plugins\\video\\db_design.mp4");
-        primaryStage.setTitle("Embedded Media Player");
+    	
+        primaryStage.setTitle("STB Automation Testing Software");
         Group root = new Group();
         Scene scene = new Scene(root, width, height);
+        
         scene.getStylesheets().add (Main.class.getResource("application.css").toExternalForm());
         
-        GridPane grid = new GridPane(); 
+        GridPane grid = new GridPane();
+        grid.setStyle("-fx-background-color:  #373737;");
         grid.setAlignment(Pos.TOP_LEFT); 
         grid.setHgap(20); 
         grid.setVgap(10); 
@@ -50,7 +52,8 @@ public class Main extends Application {
         previewLabel.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         previewLabel.setId("heading");
         grid.add(previewLabel, 1 ,0 );
-// Media Player        
+// Media Player   
+        File file = new File("plugins\\video\\chinese.mp4");
         Media media = new Media (file.toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setAutoPlay(true);
@@ -59,6 +62,9 @@ public class Main extends Application {
 // Image View
         ImagePreview preview = new ImagePreview();
         grid.add(preview, 1, 1);
+//File Browser
+        FileBrowser fileBrowser = new FileBrowser();
+        grid.add(fileBrowser, 0, 2);
         
         scene.setRoot(grid);
         
