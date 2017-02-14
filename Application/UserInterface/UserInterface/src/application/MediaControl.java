@@ -1,7 +1,6 @@
 package application;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 
@@ -32,6 +31,8 @@ import javafx.util.Duration;
 
 public class MediaControl extends BorderPane {
 
+	Measure measure = new Measure();
+	
     private MediaPlayer mp;
     private MediaView mediaView;
     private final boolean repeat = false;
@@ -44,17 +45,13 @@ public class MediaControl extends BorderPane {
     private HBox mediaBar;
 
     public MediaControl(final MediaPlayer mp) {
-    	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        double width = screenSize.getWidth() - 100;
-        double panelWidth = (width)/2 - 50;
-        double panelHeight = (9*panelWidth)/16;
-    	
+    	    	
         this.mp = mp;
     	setStyle("-fx-padding: 10 10 10 10;  -fx-background-color:    linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),    linear-gradient(#020b02, #3a3a3a),    linear-gradient(#9d9e9d 0%, #6b6a6b 20%, #343534 80%, #242424 100%),    linear-gradient(#8a8a8a 0%, #6b6a6b 20%, #343534 80%, #262626 100%),    linear-gradient(#777777 0%, #606060 50%, #505250 51%, #2a2b2a 100%);    -fx-background-insets: 0,1,4,5,6;    -fx-background-radius: 9,8,5,4,3;");        
         
     	mediaView = new MediaView(mp);
-        mediaView.setFitWidth(panelWidth); 
-        mediaView.setFitHeight(panelHeight); 
+        mediaView.setFitWidth(measure.panelWidth); 
+        mediaView.setFitHeight(measure.panelHeight); 
         mediaView.setPreserveRatio(false);
        
         GridPane mvPane = new GridPane(); 
@@ -135,9 +132,8 @@ public class MediaControl extends BorderPane {
         		    //ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
 					BufferedImage bImage= SwingFXUtils.fromFXImage(image, null);
 					Image Nimage = SwingFXUtils.toFXImage(bImage, null);
-					ImagePreview preview = new ImagePreview();
-					preview.ImagePreviewPanel();
-					preview.setImageView(Nimage);
+					ImagePreview preview = new ImagePreview(Nimage);
+					
 					//System.out.println(Nimage);
         	}
 		});

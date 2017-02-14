@@ -1,7 +1,5 @@
 package application;
 	
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.io.File;
 
 import javafx.application.Application;
@@ -24,17 +22,13 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
     	
     	
-    	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        double width = screenSize.getWidth() - 100;
-        double height = screenSize.getHeight() - 100;
-        //double panelWidth = (width)/2 - 50;
-        //double panelHeight = (9*panelWidth)/16;
-        
+
+        Measure measure = new Measure();
     	
         primaryStage.setTitle("STB Automation Testing Software");
         primaryStage.getIcons().add(new Image("file:plugins//icons//icon.png"));
         Group root = new Group();
-        Scene scene = new Scene(root, width, height);
+        Scene scene = new Scene(root, measure.width, measure.height);
         
         scene.getStylesheets().add (Main.class.getResource("application.css").toExternalForm());
         
@@ -62,12 +56,9 @@ public class Main extends Application {
         MediaControl mediaControl = new MediaControl(mediaPlayer);
         grid.add(mediaControl, 0, 1);
 // Image View
-        ImagePreview preview = new ImagePreview();
-        File imagePath = new File("plugins//image//sample.png");
-        Image image = new Image(imagePath.toURI().toString());        
+        Image image = new Image("file:plugins//image//sample.png",measure.panelWidth,measure.panelHeight,false,false);
+        ImagePreview preview = new ImagePreview(image);
         //imageView.setId("imageView");
-        preview.ImagePreviewPanel();
-        preview.setImageView(image);
         grid.add(preview, 1, 1);
 //File Browser
         FileBrowser fileBrowser = new FileBrowser();
