@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CLASS DESCRIPTION</title>
+</head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+<body>
+<h1>CLASS ImageProcessor</h1>
+     <p>The ImageProcessor is a class which process the image with four actions are performed. They are as follows</p>
+	 <ul>
+	<li>The images can be compared.</li>
+	<li>The image can be captured.</li>
+	<li>The image can be cropped.</li>
+	<li>The image can be saved. </li>
+	</ul>
+
+
+<table style="width:50%">
+
+
+  <tr>
+    <th>Modifier and Type</th>
+    <th>Method and Description</th> 
+    </tr>
+  <tr>
+    <td><b>JSONObject</b></td>
+    <td><li><b>compareImage()</b></li>
+              Compares the images.
+</td>
+    </tr>
+  <tr>
+     <td><b>BufferedImage</b></td>
+    <td><li><b>captureImage()</b></li>
+              capture the image from the media player.
+
+
+</td>
+  </tr>
+  <tr>
+ <td><b>BufferedImage</b></td>
+    <td><li><b>cropImage()</b></li>
+              Crops the image by selecting the region.
+	</td>
+
+  </tr>
+   <tr>
+ <td><b>ImageModel</b></td>
+    <td><li><b>saveImage()</b></li>
+              Saves the image with the coordinates.
+
+  </tr> 
+ 
+</table>
+<b>Method Details:</b>
+     
+<p><b>public</b> JSONObject compareImage (ImageModel source, double accuracy)</p>
+<p>The image stored in source path and image captured during runtime is compared and the accuracy of the image is checked.</p>   
+	
+<p><b>public</b> BufferedImage captureImage ()</p>
+	<p>The image is captured from the media player.</p>
+	
+<p><b>public</b> BufferedImage cropImage (BufferedImage image, <b>int</b> x, <b>int</b>y, <b>int</b> width, <b>int</b> height)
+      <p>The rectangular region of (x, y) and (width, height) is cropped from the image.</p>
+
+
+
+<p><b>public</b> ImageModel saveImage (BufferedImage image)</p>
+     <p>The image saved in the path defined in the configuration file.</p> 
+
+
+<b>CLASS OCRProcessor</b>
+                  <p>The <b>OCRProcessor</b> is a class which it extract or recognises the text from the images using an API called “Tesseract”</p>
+
+<b>Method Details:</b>
+<style>
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+
+<table style="width:50%">
+<tr>
+    <th>Modifier and Type</th>
+    <th>Method and Description</th> 
+    </tr>
+  <tr>
+    <td><b>JSONObject</b></td>
+    <td><li><b>textExtract() </b></li>
+              Recognises the text from the image.
+</td>
+    </tr>
+	</table>
+	<p><b>public</b> JSONObject textExtract(String test_ocr)</p>
+              <p>The text is get extracted from the image using a technique called optical character recognisation.</p>
+
+</body>
+</html>
