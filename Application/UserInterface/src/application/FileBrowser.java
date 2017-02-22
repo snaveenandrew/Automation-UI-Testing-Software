@@ -30,6 +30,7 @@ public class FileBrowser extends BorderPane {
 		 vbox.setPadding(new Insets(10, 10, 10, 10));
 		 vbox.setSpacing(10.0);
 		 vbox.setAlignment(Pos.TOP_RIGHT);
+		 
 		 HBox hbox = new HBox();
 		 hbox.setSpacing(10.0);
 		 hbox.setAlignment(Pos.TOP_RIGHT);
@@ -41,10 +42,14 @@ public class FileBrowser extends BorderPane {
 		 browse.setStyle("-fx-background-color: #c3c4c4, linear-gradient(#d6d6d6 50%, white 100%), radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%); -fx-background-radius: 30; -fx-background-insets: 0,1,1; -fx-text-fill: black; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );");        
 		 Button run = new Button("Run Test");
 		 run.setStyle("-fx-background-color: #c3c4c4, linear-gradient(#d6d6d6 50%, white 100%), radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%); -fx-background-radius: 30; -fx-background-insets: 0,1,1; -fx-text-fill: black; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );");
+
+		 
 		 FileChooser fileChooser = new FileChooser();
 		 fileChooser.setTitle("Open Python Script File");
 		 fileChooser.getExtensionFilters().addAll(
-		         new ExtensionFilter("Python Script[*.py,*.pyw]", "*.py","*.pyw","*.jpg"));
+		         new ExtensionFilter("Python Script[*.py,*.pyw]", "*.py","*.pyw"));
+		 
+		 
 		 browse.setOnMouseClicked(new EventHandler <MouseEvent>()
 	        {
 	            public void handle(MouseEvent event)
