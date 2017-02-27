@@ -149,9 +149,6 @@ public class MediaControl extends BorderPane {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-        		    String path = file.getAbsolutePath();
-					//System.out.println(image);
-					//ImagePreview preview = new ImagePreview();
         		    imageView.setImage(new Image("file:"+file));
         	}
 		});

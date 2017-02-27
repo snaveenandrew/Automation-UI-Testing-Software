@@ -36,7 +36,7 @@ public class FileBrowser extends BorderPane {
 		 hbox.setAlignment(Pos.TOP_RIGHT);
 		 
 		 TextField filename = new TextField ();
-		 filename.setStyle("-fx-text-fill:white; -fx-border-color: WHITE; -fx-background-color:  #373737; -fx-border-radius: 30;-fx-font-family: \"Helvetica\";-fx-font-size: 14px;-fx-font-weight: bold;");
+		 filename.setStyle("-fx-text-fill:#000; -fx-border-color: #000; -fx-background-color:  #fff; -fx-border-radius: 30;-fx-font-family: \"Helvetica\";-fx-font-size: 14px;-fx-font-weight: bold;");
 		 
 		 Button browse = new Button("Browse");
 		 browse.setStyle("-fx-background-color: #c3c4c4, linear-gradient(#d6d6d6 50%, white 100%), radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%); -fx-background-radius: 30; -fx-background-insets: 0,1,1; -fx-text-fill: black; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );");        

@@ -7,6 +7,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.media.Media;
@@ -33,34 +34,35 @@ public class Main extends Application {
         scene.getStylesheets().add (Main.class.getResource("application.css").toExternalForm());
         
         GridPane grid = new GridPane();
-        grid.setStyle("-fx-background-color:  #373737;");
+        grid.setStyle("-fx-background-color:  #fff;"/*"-fx-background-color:  #373737;"*/);
         grid.setAlignment(Pos.TOP_LEFT); 
         grid.setHgap(20); 
         grid.setVgap(10); 
         grid.setPadding(new Insets(0, 10, 10, 10));
+        /*Label header = new Label();
+        header.setMaxWidth(measure.width+200);
+        header.setStyle("-fx-background-color:  #000;");
+        grid.add(header, 0 , 0);*/
 // Label Video Player
         Text playerLabel = new Text("Video Player"); 
         playerLabel.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         playerLabel.setId("heading");
-        grid.add(playerLabel, 0 , 0);
+        grid.add(playerLabel, 0 , 1);
 // Label Preview Panel
         Text previewLabel = new Text("Preview Panel"); 
         previewLabel.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         previewLabel.setId("heading");
-        grid.add(previewLabel, 1 ,0 );
+        grid.add(previewLabel, 1 ,1);
 // Media Player   
         File file = new File("plugins\\video\\chinese.mp4");
         Media media = new Media (file.toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setAutoPlay(true);
         MediaControl mediaControl = new MediaControl(mediaPlayer);
-        grid.add(mediaControl, 0, 1);
-// Image View
-       /* ImagePreview preview = new ImagePreview("plugins\\capture\\black.png");
-        grid.add(preview, 1, 1);*/
+        grid.add(mediaControl, 0, 2);
 //File Browser
         FileBrowser fileBrowser = new FileBrowser();
-        grid.add(fileBrowser, 0, 2);
+        grid.add(fileBrowser, 0, 3);
         
         scene.setRoot(grid);
         
