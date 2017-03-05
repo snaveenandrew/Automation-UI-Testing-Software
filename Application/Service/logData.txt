@@ -1,0 +1,4 @@
+INFO    2017-03-06 00:12:25,431 [main] com.testing.test.ImageTest  - {"value":0,"status":false,"desc":"Source Image dimensions does not match with the target image"}
+INFO    2017-03-06 00:14:31,327 [main] com.testing.test.ImageTest  - {"value":0,"status":false,"desc":"Source Image dimensions does not match with the target image"}
+INFO    2017-03-06 00:20:13,105 [main] com.testing.test.ImageTest  - {"value":0,"status":false,"desc":"Source Image dimensions does not match with the target image"}
+INFO    2017-03-06 00:22:42,321 [main] com.testing.test.ImageTest  - {"value":100,"status":true,"desc":"Image Comparison success"}
