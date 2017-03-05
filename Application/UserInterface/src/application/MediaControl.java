@@ -61,15 +61,12 @@ public class MediaControl extends BorderPane {
     private HBox mediaBar;
 
     public MediaControl(final MediaPlayer mp) {
-    	    	
-        this.mp = mp;
-    	        
-        
+    	
+        this.mp = mp;       
     	mediaView = new MediaView(mp);
         mediaView.setFitWidth(measure.panelWidth); 
         mediaView.setFitHeight(measure.panelHeight); 
         mediaView.setPreserveRatio(false);
-       
         GridPane mvPane = new GridPane(); 
         mvPane.setAlignment(Pos.CENTER); 
         mvPane.setHgap(10); 
@@ -77,13 +74,13 @@ public class MediaControl extends BorderPane {
         mvPane.getChildren().add(mediaView);
         mvPane.setStyle("-fx-background-color: black;");
         mvPane.setAlignment(Pos.CENTER);
-
         mediaBar = new HBox();
         mediaBar.setId("mediaBar");
         mediaBar.setAlignment(Pos.CENTER);
         mediaBar.setPadding(new Insets(5, 10, 5, 10));
         BorderPane.setAlignment(mediaBar, Pos.CENTER);
-        	
+        Label space = new Label("        ");
+        setCenter(space);
         //Play / Pause Button
         final Button playButton = new Button();
         playButton.setGraphic(setIcon("plugins\\icons\\playBlack.png"));
@@ -221,7 +218,7 @@ public class MediaControl extends BorderPane {
         
         //Image Panel
         imageView = new ImageView();
-		image = new Image("file:plugins\\capture\\capture.png");
+		image = new Image("file:plugins\\capture\\black.png");
         VBox v2 = new VBox();
         w = (int) measure.panelWidth;
 		h = (int) measure.panelHeight;
@@ -230,9 +227,7 @@ public class MediaControl extends BorderPane {
 		Rectangle rectBound = new Rectangle();
 		rectBound.setFill(Color.TRANSPARENT);
 	    rectBound.setStroke(Color.GOLD);     
-	    ///#############
-	    System.out.println(image);
-	     
+	    
 	     HBox hbox =new HBox();
 	     
 	     group.getChildren().add(imageView);
@@ -286,28 +281,10 @@ public class MediaControl extends BorderPane {
 	                	x = (int) rectBound.getLayoutX();
 	                	y = (int) rectBound.getLayoutY();
 	                	w = (int) rectBound.getWidth();
-	                	h = (int) rectBound.getHeight();
-	                	PixelReader reader = imageView.getImage().getPixelReader();
-	                    WritableImage newImage = new WritableImage(reader, (int) rectBound.getLayoutX(),
-	                            (int) rectBound.getLayoutY(),
-	                            (int) rectBound.getWidth(),
-	                            (int) rectBound.getHeight());
-	
-	                    File file = new File("image.png"); 
-	                    try {
-							ImageIO.write(SwingFXUtils.fromFXImage(newImage, null), "png", file);
-						} catch (IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-	                    //root.getChildren().add(new ImageView(newImage));
-	                }
-	
+	                	h = (int) rectBound.getHeight();                }
 	            }
 	    });
-	     
-	     
-	
+
 	     group = new Group(imageView, rectBound);
 	
 	     HBox option = new HBox();
@@ -325,7 +302,7 @@ public class MediaControl extends BorderPane {
 	                WritableImage newImage = new WritableImage(reader, (int)(x), (int)(y), w, h);
 	                    // TODO: probably use a file chooser here
 	                filename = Name.getText().toString()+"_"+String.valueOf(x)+"_"+String.valueOf(y)+"_"+String.valueOf(w)+"_"+String.valueOf(h);
-	                    File file = new File(filename+".png");
+	                    File file = new File("plugins\\image\\input\\"+filename+".png");
 	                    try {
 	                        ImageIO.write(SwingFXUtils.fromFXImage(newImage, null), "png", file);
 	                    } catch (IOException ec) {
@@ -336,13 +313,7 @@ public class MediaControl extends BorderPane {
 	     option.getChildren().add(Name);
 	     option.getChildren().add(save);
 	     v2.getChildren().addAll(imageViewParent,group,option);
-	     /*setTop(imageViewParent);
-	     setCenter(group);
-	     setBottom(option);*/
-        //-----------
         setRight(v2);
-        /*setCenter(mvPane);
-        setBottom(mediaBar);*/
     }
 
     protected void updateValues() {
