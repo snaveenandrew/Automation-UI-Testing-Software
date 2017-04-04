@@ -26,7 +26,7 @@ public class ImageUtil {
 	
 	//Scenario 1
 	public static JSONObject compareImage(String sourcePath, double time, double accuracy) throws IOException {
-		InputStream input = new FileInputStream(System.getProperty("CONFIG_FILE"));
+		InputStream input = new FileInputStream("E:\\Final year project\\Function\\config\\config.properties");
 		prop.load(input);
 		PropertyConfigurator.configure(prop.getProperty("LOGGER_PATH"));
 		
@@ -41,7 +41,7 @@ public class ImageUtil {
 		String errorCode="FILE_ERROR_";
 		
 		Player player = new Player();
-		String targetPath = player.capture(15);
+		String targetPath = player.capture(time);
 		//System.out.println(targetPath);
 		sourcePath = prop.getProperty("IMAGE_DIR")+sourcePath;
 		try{
@@ -98,6 +98,7 @@ public class ImageUtil {
 				}
 			}
 			d.prepend(String.valueOf(result));
+			d.prepend(String.valueOf(accuracy));
 		}
 		catch (Exception fileException ) {
 			// TODO Auto-generated catch block
@@ -105,6 +106,7 @@ public class ImageUtil {
 			responseModel.setMessage(prop.getProperty(errorCode));
 			responseModel.setStatus(false);
 			d.prepend("0");
+			d.prepend(String.valueOf(accuracy));
 			return response.getResponse(responseModel);
 		}
 		return response.getResponse(responseModel);

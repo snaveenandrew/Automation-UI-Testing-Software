@@ -17,10 +17,6 @@ public class FileMeta {
 		Y = Double.parseDouble(st.nextToken());
 		Width = Double.parseDouble(st.nextToken());
 		Height = Double.parseDouble(st.nextToken());
-		System.out.println(X);
-		System.out.println(Y);
-		System.out.println(Width);
-		System.out.println(Height);
 		
 	}
 	public double getX(){

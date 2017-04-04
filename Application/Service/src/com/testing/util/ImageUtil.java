@@ -30,8 +30,6 @@ public class ImageUtil {
 		prop.load(input);
 		PropertyConfigurator.configure(prop.getProperty("LOGGER_PATH"));
 		
-		
-		
 		double result = 0.0;
 		int sourceFileError,targetFileError;
 		ResponseModel responseModel = new ResponseModel();
@@ -40,10 +38,11 @@ public class ImageUtil {
 		FileUtil check = new FileUtil();
 		Response response = new Response();
 		String errorCode="FILE_ERROR_";
-		
+		System.out.println("Going to capture");
 		Player player = new Player();
 		String targetPath = player.capture(time);
-		//System.out.println("targetPath");
+		System.out.println("captured");
+		sourcePath = prop.getProperty("IMAGE_DIR")+sourcePath;
 		try{
 			FileMeta fileMeta = new FileMeta(sourcePath);
 			sourceImage.setFileName(new File(sourcePath));
@@ -61,13 +60,19 @@ public class ImageUtil {
 				targetImage.setBufferedImage(ImageIO.read(targetImage.getFileName()));
 		
 				targetImage.setBufferedImage(cropImage(targetImage.getBufferedImage(),(int)fileMeta.getX(),(int)fileMeta.getY(),(int)fileMeta.getWidth(),(int)fileMeta.getHeight()));			
-//DELETE AFTER SETTING SAVE PATH IN UI
-				sourceImage.setBufferedImage(cropImage(sourceImage.getBufferedImage(),(int)fileMeta.getX(),(int)fileMeta.getY(),(int)fileMeta.getWidth(),(int)fileMeta.getHeight()));
+//DELETE AFTER SETTING SAVE PATH TO UI
+//				sourceImage.setBufferedImage(cropImage(sourceImage.getBufferedImage(),(int)fileMeta.getX(),(int)fileMeta.getY(),(int)fileMeta.getWidth(),(int)fileMeta.getHeight()));
 //##################				
 				sourceImage.setHeight(sourceImage.getBufferedImage().getHeight());
 				targetImage.setHeight(targetImage.getBufferedImage().getHeight());
 				sourceImage.setWidth(sourceImage.getBufferedImage().getWidth());
-				targetImage.setWidth(targetImage.getBufferedImage().getWidth());	
+				targetImage.setWidth(targetImage.getBufferedImage().getWidth());
+				
+				System.out.println(sourceImage.getBufferedImage().getHeight());
+				System.out.println(sourceImage.getBufferedImage().getWidth());
+				System.out.println(targetImage.getBufferedImage().getHeight());
+				System.out.println(targetImage.getBufferedImage().getWidth());
+				
 				if (sourceImage.getHeight() != targetImage.getHeight() || (sourceImage.getWidth() != sourceImage.getWidth())) {
 					responseModel.setMessage("Source Image dimensions does not match with the target image");
 					responseModel.setStatus(false);

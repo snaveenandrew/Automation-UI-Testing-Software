@@ -21,8 +21,8 @@ public class OCRUtil {
 	static Properties prop=new Properties();
 	static Logger logger = Logger.getLogger(OCRUtil.class);
 
-	public static JSONObject checkString(String name, double time, double accuracy) throws IOException {
-		InputStream input = new FileInputStream(System.getProperty("CONFIG_FILE"));
+	public static JSONObject checkString(String name, double time) throws IOException {
+		InputStream input = new FileInputStream("E:\\Final year project\\Function\\config\\config.properties");
 		prop.load(input);
 		PropertyConfigurator.configure(prop.getProperty("LOGGER_PATH"));
 		DataFile d = new DataFile();

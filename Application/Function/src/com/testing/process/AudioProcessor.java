@@ -15,7 +15,7 @@ public class AudioProcessor {
 	static Logger logger = Logger.getLogger(AudioProcessor.class);
 	public static JSONObject DetectAudio() throws IOException {
 		Properties prop=new Properties();
-		InputStream input = new FileInputStream(System.getProperty("CONFIG_FILE"));
+		InputStream input = new FileInputStream("E:\\Final year project\\Function\\config\\config.properties");
 		prop.load(input);
 		PropertyConfigurator.configure(prop.getProperty("LOGGER_PATH"));
 		logger.info("Audio Detection Service Started...");

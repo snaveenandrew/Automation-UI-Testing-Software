@@ -12,10 +12,10 @@ import com.testing.process.VideoProcessor;
 
 public class VideoTest {
 	static Logger logger = Logger.getLogger(VideoTest.class);
-	public void test(String name,double time,double accuracy) throws IOException {
+	public void test() throws IOException {
 		// TODO Auto-generated constructor stub
 		Properties prop=new Properties();
-		InputStream input = new FileInputStream(System.getProperty("CONFIG_FILE"));
+		InputStream input = new FileInputStream("E:\\Final year project\\Function\\config\\config.properties");
 		prop.load(input);
 		PropertyConfigurator.configure(prop.getProperty("LOGGER_PATH"));
 		logger.info(VideoProcessor.DetectVideo());

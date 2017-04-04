@@ -12,13 +12,13 @@ import com.testing.process.OCRProcessor;
 
 public class OCRTest {
 	static Logger logger = Logger.getLogger(OCRTest.class);
-	public void test(String name,double time,double accuracy) throws IOException {
+	public void test(String name,double time) throws IOException {
 		// TODO Auto-generated constructor stub
 		Properties prop=new Properties();
-		InputStream input = new FileInputStream(System.getProperty("CONFIG_FILE"));
+		InputStream input = new FileInputStream("E:\\Final year project\\Function\\config\\config.properties");
 		prop.load(input);
 		PropertyConfigurator.configure(prop.getProperty("LOGGER_PATH"));
-		logger.info(OCRProcessor.checkString(name,time,accuracy));
+		logger.info(OCRProcessor.checkString(name,time));
 	}
 
 

@@ -50,19 +50,24 @@ public class FileBrowser extends BorderPane {
 		 hbox.setAlignment(Pos.TOP_RIGHT);
 		 
 		 TextField filename = new TextField ();
+		 filename.setPromptText("Enter the Script Path");
 		 filename.setMaxWidth(measure.panelWidth);
 		 filename.setStyle("-fx-text-fill:#000; -fx-border-color: #000; -fx-background-color:  #fff; -fx-border-radius: 30;-fx-font-family: \"Helvetica\";-fx-font-size: 14px;-fx-font-weight: bold;");
 		 
 		 Button browse = new Button("Browse");
 		 browse.setStyle("-fx-background-color: #c3c4c4, linear-gradient(#d6d6d6 50%, white 100%), radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%); -fx-background-radius: 30; -fx-background-insets: 0,1,1; -fx-text-fill: black; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );");        
+		 
 		 Button run = new Button("Run Test");
 		 run.setStyle("-fx-background-color: #c3c4c4, linear-gradient(#d6d6d6 50%, white 100%), radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%); -fx-background-radius: 30; -fx-background-insets: 0,1,1; -fx-text-fill: black; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );");
 
 		 
 		 FileChooser fileChooser = new FileChooser();
-		 fileChooser.setTitle("Open Python Script File");
+		 fileChooser.setTitle("Open Test Script File");
 		 fileChooser.getExtensionFilters().addAll(
-		         new ExtensionFilter("Python Script[*.py,*.pyw]", "*.py","*.pyw"));
+		         new ExtensionFilter("Python Script[*.py,*.pyw]", "*.py","*.pyw"),
+		         new ExtensionFilter("Javascript[*.js]", "*.js"),
+		         new ExtensionFilter("SCALA Script[*.sc]", "*.sc"),
+		         new ExtensionFilter("Ruby Script[*.rbw]", "*.rbw"));
 		 
 		 
 		 browse.setOnMouseClicked(new EventHandler <MouseEvent>()
@@ -106,6 +111,19 @@ public class FileBrowser extends BorderPane {
 		 Button graph = new Button();
 		 graph.setGraphic(setIcon("plugins\\icons\\graph.jpg"));
 		 graph.setStyle("-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 10, 0 , 0 , 3 );");
+		 graph.setOnMouseClicked(new EventHandler <MouseEvent>()
+	        {
+	            public void handle(MouseEvent event)
+	            {	
+	            	GraphView graph = new GraphView();
+	            	try {
+						graph.start(new Stage());
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+	            }
+	        });
 		 Button log = new Button();
 		 log.setGraphic(setIcon("plugins\\icons\\log.jpg"));
 		 log.setStyle("-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 10, 0 , 0 , 3 );");
@@ -115,7 +133,7 @@ public class FileBrowser extends BorderPane {
 	            public void handle(MouseEvent event)
 	            {	
 	            	
-	            	File sfile = new File("logData.txt");
+	            	File sfile = new File("E:\\Final year project\\UserInterface\\Data\\logData.txt");
 	            	if (sfile.exists()) {
 	            		openFile(sfile);
 	            	}
@@ -123,17 +141,34 @@ public class FileBrowser extends BorderPane {
 	            		Alert alert = new Alert(AlertType.ERROR);
 	            		alert.setTitle("Error Dialog");
 	            		alert.setHeaderText(null);
-	            		alert.setContentText("Please select a script a script file to run");
+	            		alert.setContentText("File Not fount in the location");
 	            		alert.showAndWait();
 	            	}
 	            }
 	        });
 
 		 rhbox.getChildren().addAll(graph,log);
+		 HBox rhbox2 = new HBox();
+		 rhbox2.setSpacing(15.0);
+		 TextField mailid = new TextField ();
+		 mailid.setPromptText("Enter the mail id to send");
+		 mailid.setMaxWidth(measure.panelWidth);
+		 mailid.setStyle("-fx-text-fill:#000; -fx-border-color: #000; -fx-background-color:  #fff; -fx-border-radius: 30;-fx-font-family: \"Helvetica\";-fx-font-size: 14px;-fx-font-weight: bold;");
 		 
 		 Button send = new Button("Send");
 		 send.setStyle("-fx-background-color: #c3c4c4, linear-gradient(#d6d6d6 50%, white 100%), radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%); -fx-background-radius: 30; -fx-background-insets: 0,1,1; -fx-text-fill: black; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );");
-		 rvbox.getChildren().addAll(rhbox,send);
+		 
+		 send.setOnMouseClicked(new EventHandler <MouseEvent>()
+	      {
+	            public void handle(MouseEvent event)
+	            {	
+	            	String to=mailid.getText().toString();
+	            	SendMail mail = new SendMail();
+	            	mail.send(to);
+	            }
+	       });
+		 rhbox2.getChildren().addAll(mailid,send);
+		 rvbox.getChildren().addAll(rhbox,rhbox2);
 		 
 		 //CURSOR
 		 log.setCursor(Cursor.HAND);

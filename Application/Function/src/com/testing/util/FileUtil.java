@@ -15,7 +15,7 @@ public class FileUtil {
 	static Logger logger = Logger.getLogger(FileUtil.class);
 	public int isvalidFile(ImageModel model) throws IOException{
 		Properties prop=new Properties();
-		InputStream input = new FileInputStream(System.getProperty("CONFIG_FILE"));
+		InputStream input = new FileInputStream("E:\\Final year project\\Function\\config\\config.properties");
 		prop.load(input);
 		PropertyConfigurator.configure(prop.getProperty("LOGGER_PATH"));
 		int errorCode=0;

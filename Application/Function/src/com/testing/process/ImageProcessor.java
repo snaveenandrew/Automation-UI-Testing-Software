@@ -16,7 +16,7 @@ public class ImageProcessor {
 	public static JSONObject compareImage(String file,double time,double accuracy) throws IOException {
 		//System.out.println("Processor");
 		Properties prop=new Properties();
-		InputStream input = new FileInputStream(System.getProperty("CONFIG_FILE"));
+		InputStream input = new FileInputStream("E:\\Final year project\\Function\\config\\config.properties");
 		prop.load(input);
 		PropertyConfigurator.configure(prop.getProperty("LOGGER_PATH"));
 		logger.info("Image Comparison Service Started...");

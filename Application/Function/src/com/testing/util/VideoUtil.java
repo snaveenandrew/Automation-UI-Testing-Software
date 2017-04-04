@@ -19,7 +19,7 @@ public class VideoUtil {
 	
 	//Scenario 1
 	public static JSONObject DetectVideo() throws IOException {
-		InputStream input = new FileInputStream(System.getProperty("CONFIG_FILE"));		
+		InputStream input = new FileInputStream("E:\\Final year project\\Function\\config\\config.properties");		
 		//InputStream graphData = new FileInputStream(prop.getProperty("GRAPH_DATA"));
 		prop.load(input);
 		PropertyConfigurator.configure(prop.getProperty("LOGGER_PATH"));

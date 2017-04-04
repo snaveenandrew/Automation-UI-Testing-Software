@@ -14,7 +14,7 @@ import java.util.Properties;
 public class DataFile {
 	static Properties prop=new Properties();
 	public void prepend(String Data) throws IOException{
-		InputStream input = new FileInputStream(System.getProperty("CONFIG_FILE"));
+		InputStream input = new FileInputStream("E:\\Final year project\\Function\\config\\config.properties");
 		prop.load(input);
 		String path = prop.getProperty("GRAPH_DATA");
 		File mFile = new File(path);

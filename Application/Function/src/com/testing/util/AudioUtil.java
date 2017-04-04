@@ -19,7 +19,7 @@ public class AudioUtil {
 	
 	//Scenario 1
 	public static JSONObject DetectAudio() throws IOException {
-		InputStream input = new FileInputStream(System.getProperty("CONFIG_FILE"));
+		InputStream input = new FileInputStream("E:\\Final year project\\Function\\config\\config.properties");
 		prop.load(input);
 		PropertyConfigurator.configure(prop.getProperty("LOGGER_PATH"));
 		DataFile d = new DataFile();

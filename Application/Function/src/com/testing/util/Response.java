@@ -21,7 +21,7 @@ public class Response {
 	static Logger logger = Logger.getLogger(Response.class);
 	public JSONObject getResponse(ResponseModel model){
 		try {
-			InputStream input = new FileInputStream(System.getProperty("CONFIG_FILE"));
+			InputStream input = new FileInputStream("E:\\Final year project\\Function\\config\\config.properties");
 			prop.load(input);
 			PropertyConfigurator.configure(prop.getProperty("LOGGER_PATH"));
 			response.put(prop.getProperty("RESULT_STATUS"), model.getStatus());

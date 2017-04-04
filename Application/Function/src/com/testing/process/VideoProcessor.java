@@ -15,7 +15,7 @@ public class VideoProcessor {
 	static Logger logger = Logger.getLogger(VideoProcessor.class);
 	public static JSONObject DetectVideo() throws IOException {
 		Properties prop=new Properties();
-		InputStream input = new FileInputStream(System.getProperty("CONFIG_FILE"));
+		InputStream input = new FileInputStream("E:\\Final year project\\Function\\config\\config.properties");
 		prop.load(input);
 		PropertyConfigurator.configure(prop.getProperty("LOGGER_PATH"));
 		logger.info("Video Detection Service Started...");
