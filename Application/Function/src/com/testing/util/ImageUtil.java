@@ -1,3 +1,5 @@
+//Author : Rajamegam
+
 package com.testing.util;
 
 import java.awt.image.BufferedImage;
